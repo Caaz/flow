@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <title>Flow Example</title>
+  <!-- External shit -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Flow shit -->
+  <link rel="stylesheet" href='./css/flow.css'>
+  <script src="./js/flow.js"></script>
+  <!-- Actual example usage. -->
+  <script>
+    // This is probably where the actual example part kicks in.
+    $(function(){
+      var shadowLength = "50px";
+      Flow(
+        // Where content will go
+        $('main'),
+        // Where navigation will go
+        $('header'),
+        // Actual content
+        {
+          'Home': {
+            html: '<h1>This is <em>Flow</em>!</h1><p>The important stuff is in <a href="./js/flow.js">flow.js</a>, but the actual important stuff is well, here.</p>',
+            css: {
+              // Yes I know this image is big. Fuck you.
+              backgroundImage: 'url("./images/001.jpg")',
+              backgroundPosition:'top',
+              boxShadow: '0px -'+shadowLength+' '+shadowLength+' -20px #000 inset'
+            }
+          },
+          'About': {
+            html: "<h1>What's Flow?</h1><p>Flow is a quick little template I gave myself so that I could quickly and easily make one page designs. I'm sure this lacks a lot, but it does everything I need it to do. Feel free to fork it and add something useful as you see fit! I'm a master of nothing so any chance to improve is fine by me.</p>",
+          },
+          'Problems': {
+            html: "<h1>Problems?</h1><p>I have lots! Ones related to this project include requiring javascript. Not sure there's much of a way around that unless I decide to make this a back end thing, but fuck that.</p><p>After that, maybe the fact that it probably doesn't look good on mobile. Who knows!</p>",
+          },
+          'Misc': {
+            html: "<h1>Pew Pew</h1><p>Adding in the css thing was a good idea.</p>",
+            css: {
+              backgroundImage: 'url("./images/001.jpg")',
+              backgroundPosition:'bottom',
+              boxShadow: '0px '+shadowLength+' '+shadowLength+' -20px #000 inset',
+              color:"#8528cd"
+            }
+          },
+        });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>FLOW</h1>
+  </header>
+  <main></main>
+</body>
+</html>

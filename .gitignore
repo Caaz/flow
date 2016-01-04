@@ -1,0 +1,4 @@
+# Sass shit! I figure it's probably best to just leave this out of the git.
+.sass-cache/
+scss/
+compile.pl
