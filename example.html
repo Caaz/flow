@@ -43,7 +43,20 @@
               color:"#8528cd"
             }
           },
-        });
+        }
+      );
+      // Interactivity bullshit.
+      var $nav = $('header > nav');
+      var viewing = 0;
+      var updateNav = function() { $nav.children() .removeClass('flow-viewing') .eq(viewing) .addClass('flow-viewing'); }
+      updateNav();
+      $(window).scroll(function(e) {
+        var scroll = $(window).scrollTop();
+        var height = $(window).height();
+        var at = Math.floor(scroll/height);
+        if(at != viewing) { viewing = at; updateNav(); }
+      });
+
     });
   </script>
 </head>
