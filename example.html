@@ -48,8 +48,11 @@
       // Interactivity bullshit.
       var $nav = $('header > nav');
       var viewing = 0;
-      var updateNav = function() { $nav.children() .removeClass('flow-viewing') .eq(viewing) .addClass('flow-viewing'); }
-      updateNav();
+      var updateNav = function() { $nav.children().removeClass('flow-viewing').eq(viewing).addClass('flow-viewing'); }
+      var scrollTo = function(id) { $('html').animate({ scrollTop: $(id).offset().top }, 500,'swing'); history.pushState(null, null, id); }
+      $nav.on('click','a', function(e){ e.preventDefault(); scrollTo($(e.target).attr('href')); });
+
+      // Update navigation while scrolling
       $(window).scroll(function(e) {
         var scroll = $(window).scrollTop();
         var height = $(window).height();

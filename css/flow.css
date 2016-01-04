@@ -53,3 +53,6 @@ h1 {
 
 .flow-viewing {
   border-color: #777; }
+
+a, a:hover, a:active, a:focus {
+  outline: transparent !important; }
